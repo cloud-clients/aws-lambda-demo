@@ -12,6 +12,12 @@ Description: >-
 Transform:
 - AWS::Serverless-2016-10-31
 
+Parameters:
+  FunctionName:
+    Type: String
+    Description: "Required, name used for the Lambda in AWS"
+
+
 # Resources declares the AWS resources that you want to include in the stack
 # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html
 Resources:
@@ -22,6 +28,7 @@ Resources:
   helloFromLambdaFunction:
     Type: AWS::Serverless::Function
     Properties:
+      FunctionName: !Ref FunctionName
       CodeUri: ./src/stand-alone-lambda/
       Handler: stand-alone-lambda::stand-alone-lambda.Function::FunctionHandler
       Runtime: dotnetcore3.1
