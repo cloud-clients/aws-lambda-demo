@@ -30,7 +30,7 @@ Resources:
     Properties:
       FunctionName: !Ref FunctionName
       CodeUri: ./src/stand-alone-lambda/
-      Handler: stand-alone-lambda::stand-alone-lambda.Function::FunctionHandler
+      Handler: stand-alone-lambda::StandAloneLambda.Function::FunctionHandler
       Runtime: dotnetcore3.1
       MemorySize: 256
       Timeout: 100
