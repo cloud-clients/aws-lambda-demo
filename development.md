@@ -82,3 +82,44 @@ Cloning from https://github.com/aws/aws-sam-cli-app-templates (process may take 
 
 PS D:\Repos\cloud-clients\aws-lambda-demo>
 ```
+
+## Testing a Lambda
+`sam` commands should be executed in the root folder of the lambda project.
+
+**Build**
+
+`> sam build`
+
+**Execute locally**
+
+`> sam local start-lambda`
+
+**Deploy resources**
+
+`> sam deploy --profile <AWS CLI profile name> --guided`
+
+`--guided` is needed the first time to generate the file `samconfig.toml`
+
+**Deploy resources specifying a configuration file and adding a tag**
+
+`> sam deploy --profile <AWS CLI profile name> --config-file samconfig.toml --tags Application=DEMO-STAND-ALONE`
+
+## Debugging using The AWS .NET Mock Lambda Test Tool
+
+https://github.com/aws/aws-lambda-dotnet/tree/master/Tools/LambdaTestTool
+
+**Install**
+
+`> dotnet tool install -g Amazon.Lambda.TestTool-3.1`
+
+**Configuration**
+
+File `aws-lambda-tools-defaults.json` is necessary to specify properties used by the tool.
+
+https://docs.aws.amazon.com/code-samples/latest/catalog/lambda_functions-blank-csharp-src-blank-csharp-aws-lambda-tools-defaults.json.html
+
+**Configuring VS Code**
+
+Configure launch.json file as specified in 
+https://github.com/aws/aws-lambda-dotnet/tree/master/Tools/LambdaTestTool
+

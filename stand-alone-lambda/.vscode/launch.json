@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Mock Lambda Test Tool - stand-alone-lambda",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${env:userprofile}/.dotnet/tools/dotnet-lambda-test-tool-3.1.exe",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/stand-alone-lambda/bin/Debug/netcoreapp3.1", 
+            "console": "internalConsole",
+            "stopAtEntry": false,
+            "internalConsoleOptions": "openOnSessionStart"
+        }
+    ]
+}
