@@ -112,14 +112,27 @@ https://github.com/aws/aws-lambda-dotnet/tree/master/Tools/LambdaTestTool
 
 `> dotnet tool install -g Amazon.Lambda.TestTool-3.1`
 
+There is a version of the tool for each version of dotnet.
+
+e.g. use 
+
+`> dotnet tool install -g Amazon.Lambda.TestTool-6.0`
+
+for dotnet 6.0.
+
 **Configuration**
 
-File `aws-lambda-tools-defaults.json` is necessary to specify properties used by the tool.
+File `aws-lambda-tools-defaults.json` specifies properties used by the tool.
 
 https://docs.aws.amazon.com/code-samples/latest/catalog/lambda_functions-blank-csharp-src-blank-csharp-aws-lambda-tools-defaults.json.html
 
+Property `function-runtime` should match the `Runtime` property in the file `template.yaml`
+
 **Configuring VS Code**
 
-Configure launch.json file as specified in 
+Configure launch.json as specified in 
 https://github.com/aws/aws-lambda-dotnet/tree/master/Tools/LambdaTestTool
 
+**Configuring Visual Studio**
+
+Configure `launchSettings.json` as specified in https://github.com/aws/aws-lambda-dotnet/tree/master/Tools/LambdaTestTool
